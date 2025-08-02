@@ -77,6 +77,15 @@ data/*.csv
 data/*.db
 data/*.json
 *.log
+data/polygon_cache/
+data/trades/
+data/backtest_results/
+data/yearly_backtest_results/
+data/optimization_results/
+data/sample_polygon_data/
+data/demo_backtest_results/
+data/risk_analysis/
+orb_env/
 
 # Credentials
 *.key

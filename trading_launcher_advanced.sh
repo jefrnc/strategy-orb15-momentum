@@ -63,14 +63,14 @@ show_menu() {
     print_message $GREEN "   🔥 ORB AGGRESSIVE SYSTEM LAUNCHER    "
     print_message $GREEN "═══════════════════════════════════════"
     echo ""
-    print_message $YELLOW "🚀 MODO AGRESIVO POR DEFECTO (25.7% annual, 5% risk)"
+    print_message $YELLOW "🚀 AGGRESSIVE MODE BY DEFAULT (5% risk per trade)"
     echo ""
     echo "Select an option:"
-    echo "1) 🔥 Aggressive Mode (Paper) - DEFAULT (25.7% return)"
-    echo "2) 🔥 Aggressive Mode (Live) - DEFAULT (25.7% return)"
-    echo "3) 🛡️ Conservative Mode (10.3% return, 2% risk)"
-    echo "4) ⚖️ Balanced Mode (16.0% return, 3% risk)"
-    echo "5) 🚀 Growth Mode (20.7% return, 4% risk)"
+    echo "1) 🔥 Aggressive Mode (Paper) - DEFAULT (5% risk)"
+    echo "2) 🔥 Aggressive Mode (Live) - DEFAULT (5% risk)"
+    echo "3) 🛡️ Conservative Mode (2% risk)"
+    echo "4) ⚖️ Balanced Mode (3% risk)"
+    echo "5) 🚀 Growth Mode (4% risk)"
     echo "6) 🔧 Advanced Options (Custom configs)"
     echo "7) 🧹 Clean Logs"
     echo "8) 📁 Open Terminal in Project"
@@ -79,9 +79,9 @@ show_menu() {
     read -p "Enter your choice [0-8]: " choice
     
     case $choice in
-        1) launch_script "orb_trader.py --mode paper" "🔥 AGGRESSIVE MODE (Default - 25.7% return)";;
+        1) launch_script "orb_trader.py --mode paper" "🔥 AGGRESSIVE MODE (Default - 5% risk)";;
         2) print_message $YELLOW "⚠️ WARNING: AGGRESSIVE LIVE TRADING with real money!"
-           print_message $YELLOW "25.7% return mode with 5% position risk!"
+           print_message $YELLOW "5% position risk - HIGH RISK MODE!"
            read -p "Type 'BEAST' to proceed with aggressive live trading: " confirm
            if [ "$confirm" = "BEAST" ]; then
                launch_script "orb_trader.py --mode live" "🔥 AGGRESSIVE LIVE TRADING"
@@ -90,9 +90,9 @@ show_menu() {
                sleep 2
                show_menu
            fi;;
-        3) launch_script "orb_trader.py --risk-profile conservative --mode paper" "Conservative Mode (10.3% return)";;
-        4) launch_script "orb_trader.py --risk-profile balanced --mode paper" "Balanced Mode (16.0% return)";;
-        5) launch_script "orb_trader.py --risk-profile growth --mode paper" "Growth Mode (20.7% return)";;
+        3) launch_script "orb_trader.py --risk-profile conservative --mode paper" "Conservative Mode (2% risk)";;
+        4) launch_script "orb_trader.py --risk-profile balanced --mode paper" "Balanced Mode (3% risk)";;
+        5) launch_script "orb_trader.py --risk-profile growth --mode paper" "Growth Mode (4% risk)";;
         6) print_message $GREEN "Advanced configuration options:"
            echo "  - Custom config files in configs/ directory"
            echo "  - Manual risk profile selection"
@@ -102,7 +102,7 @@ show_menu() {
         7) rm -rf logs/*.log && print_message $GREEN "Logs cleaned!" && sleep 1 && show_menu;;
         8) osascript -e "tell application \"Terminal\"
             activate
-            do script \"cd $PROJECT_DIR && source $VENV_NAME/bin/activate && clear && echo '🔥 ORB AGGRESSIVE ENVIRONMENT ACTIVATED' && echo '════════════════════════════════════' && echo '' && echo 'DEFAULT: Aggressive Mode (25.7% annual return)' && echo '  python orb_trader.py --mode paper     # AGGRESSIVE (Default)' && echo '  python orb_trader.py --mode live      # AGGRESSIVE Live' && echo '' && echo 'Other Risk Profiles:' && echo '  python orb_trader.py --risk-profile conservative  # 10.3% return' && echo '  python orb_trader.py --risk-profile balanced      # 16.0% return' && echo '  python orb_trader.py --risk-profile growth        # 20.7% return' && echo ''\"
+            do script \"cd $PROJECT_DIR && source $VENV_NAME/bin/activate && clear && echo '🔥 ORB AGGRESSIVE ENVIRONMENT ACTIVATED' && echo '════════════════════════════════════' && echo '' && echo 'DEFAULT: Aggressive Mode (5% risk per trade)' && echo '  python orb_trader.py --mode paper     # AGGRESSIVE (Default)' && echo '  python orb_trader.py --mode live      # AGGRESSIVE Live' && echo '' && echo 'Other Risk Profiles:' && echo '  python orb_trader.py --risk-profile conservative  # 2% risk' && echo '  python orb_trader.py --risk-profile balanced      # 3% risk' && echo '  python orb_trader.py --risk-profile growth        # 4% risk' && echo ''\"
         end tell";;
         0) exit 0;;
         *) print_message $RED "Invalid option. Please try again."

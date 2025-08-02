@@ -1,7 +1,7 @@
 {
   "system_name": "ORB_CONSERVATIVE_SYSTEM",
   "version": "1.0",
-  "description": "Retorno estable con bajo riesgo - 10.3% retorno anualizado",
+  "description": "Low risk configuration - 2% position risk per trade",
   "last_updated": "2025-01-02",
   "position_sizing": {
     "base_risk_per_trade": 0.02,
@@ -256,12 +256,5 @@
       "emergency_stop_loss": 0.02,
       "hold_cash_percentage": 0.5
     }
-  },
-  "expected_performance": {
-    "annualized_return_pct": 10.29509733323727,
-    "max_drawdown_pct": 0.04814116726850913,
-    "sharpe_ratio": 1.5747828636505783,
-    "win_rate_pct": 37.267080745341616,
-    "risk_level": "conservative"
   }
 }

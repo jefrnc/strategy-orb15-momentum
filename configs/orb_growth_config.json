@@ -1,7 +1,7 @@
 {
   "system_name": "ORB_GROWTH_SYSTEM",
   "version": "1.0",
-  "description": "Crecimiento acelerado con riesgo moderado - 20.7% retorno anualizado",
+  "description": "Growth focused configuration - 4% position risk per trade",
   "last_updated": "2025-01-02",
   "position_sizing": {
     "base_risk_per_trade": 0.04,
@@ -256,12 +256,5 @@
       "emergency_stop_loss": 0.02,
       "hold_cash_percentage": 0.5
     }
-  },
-  "expected_performance": {
-    "annualized_return_pct": 20.74109818181231,
-    "max_drawdown_pct": 0.10636513553541836,
-    "sharpe_ratio": 1.5891974232756059,
-    "win_rate_pct": 37.267080745341616,
-    "risk_level": "growth"
   }
 }
