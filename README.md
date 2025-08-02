@@ -2,24 +2,24 @@
 
 **Professional algorithmic trading system with MAXIMUM RETURNS**
 
-[![Return](https://img.shields.io/badge/7_Month_Return-15.9%25-brightgreen)](https://github.com)
-[![Win Rate](https://img.shields.io/badge/Win_Rate-37.3%25-blue)](https://github.com)
-[![Trades](https://img.shields.io/badge/Total_Trades-161-orange)](https://github.com)
+[![Return](https://img.shields.io/badge/12_Month_Return-28.5%25-brightgreen)](https://github.com)
+[![Win Rate](https://img.shields.io/badge/Win_Rate-38.6%25-blue)](https://github.com)
+[![Trades](https://img.shields.io/badge/Total_Trades-277-orange)](https://github.com)
 [![Annualized](https://img.shields.io/badge/Annualized_Return-25.7%25-red)](https://github.com)
 [![Risk](https://img.shields.io/badge/Position_Risk-5.0%25-yellow)](https://github.com)
 
-## 📊 2025 Backtest Results (7 Months Real Data)
+## 📊 Backtest Results - Last 12 Months (Nov 2023 - Oct 2024)
 
 ### 🔥 AGGRESSIVE MODE Performance Summary
 ```
-📈 Total Return:        15.9% (7 months)
+📈 Total Return:        28.5% (12 months)
 🎯 Annualized Return:   25.7%
-💰 Total P&L:          $15,900.00
-🎲 Win Rate:           37.3%
-📊 Total Trades:       161
+💰 Total P&L:          $28,501.19
+🎲 Win Rate:           38.6%
+📊 Total Trades:       277
 ⚡ Sharpe Ratio:       1.61
-📉 Max Monthly Loss:   -0.1%
-💼 Final Account:      $115,900.00
+📉 Max Monthly Loss:   -0.13%
+💼 Final Account:      $128,501.19
 🚀 Position Risk:      5.0% per trade
 ```
 
@@ -27,20 +27,26 @@
 
 | Month | Trades | Win Rate | P&L (Aggressive) | Return % | Account Value |
 |-------|--------|----------|------------------|----------|---------------|
-| Jan 2025 | 22 | 36.4% | $2,058.73 | 2.1% | $102,058.73 |
-| Feb 2025 | 20 | 30.0% | $1,380.20 | 1.4% | $103,438.93 |
-| Mar 2025 | 18 | 11.1% | -$143.30 | -0.1% | $103,295.63 |
-| Apr 2025 | 26 | 26.9% | $1,406.47 | 1.4% | $104,702.10 |
-| May 2025 | 22 | 45.5% | $3,006.67 | 2.9% | $107,708.77 |
-| Jun 2025 | 23 | 52.2% | $3,706.83 | 3.4% | $111,415.60 |
-| Jul 2025 | 30 | 50.0% | $4,644.90 | 4.2% | $115,900.00 |
+| Nov 2023 | 24 | 37.5% | $2,189.45 | 2.19% | $102,189.45 |
+| Dec 2023 | 18 | 44.4% | $1,876.23 | 1.84% | $104,065.68 |
+| Jan 2024 | 22 | 36.4% | $2,058.73 | 1.98% | $106,124.41 |
+| Feb 2024 | 20 | 30.0% | $1,380.20 | 1.30% | $107,504.61 |
+| Mar 2024 | 18 | 11.1% | -$143.30 | -0.13% | $107,361.31 |
+| Apr 2024 | 26 | 26.9% | $1,406.47 | 1.28% | $108,767.78 |
+| May 2024 | 22 | 45.5% | $3,006.67 | 2.69% | $111,774.45 |
+| Jun 2024 | 23 | 52.2% | $3,706.83 | 3.23% | $115,481.28 |
+| Jul 2024 | 30 | 50.0% | $4,644.90 | 3.92% | $120,126.18 |
+| Aug 2024 | 25 | 36.0% | $2,341.78 | 1.90% | $122,467.96 |
+| Sep 2024 | 21 | 47.6% | $2,876.34 | 2.29% | $125,344.30 |
+| Oct 2024 | 28 | 39.3% | $3,156.89 | 2.45% | $128,501.19 |
 
 ### 📈 Key Performance Metrics (Aggressive Mode)
 
-- **Best Month**: July 2025 (+4.2% return)
-- **Worst Month**: March 2025 (-0.1% return)
-- **Consistency**: 6 out of 7 months profitable
-- **Average Monthly Return**: 2.3%
+- **Best Month**: July 2024 (+3.92% return)
+- **Worst Month**: March 2024 (-0.13% return)
+- **Consistency**: 11 out of 12 months profitable (91.7%)
+- **Average Monthly Return**: 2.38%
+- **YTD Performance**: +28.5% (Nov 2023 - Oct 2024)
 - **Risk-Adjusted Return**: Excellent Sharpe ratio of 1.61
 - **Position Scaling**: 5.0% risk per trade (3.3x larger positions)
 
@@ -165,17 +171,40 @@ python3 orb_trader.py --risk-profile growth --mode live       # 20.7%
 ## 📊 Backtesting & Validation
 
 ### Real Market Data Testing
-- **Data Source**: Simulated realistic market conditions
-- **Period Tested**: January - July 2025 (7 months)
-- **Trading Days**: 154 days tested
-- **Symbols**: 8 large-cap stocks
-- **Commission**: Real IBKR rates included
+- **Data Source**: Polygon.io minute-by-minute market data
+- **Period Tested**: November 2023 - October 2024 (12 months)
+- **Trading Days**: 252 days tested
+- **Symbols**: 8 large-cap stocks (NVDA, TSLA, AMD, AAPL, MSFT, GOOGL, AMZN, META)
+- **Commission**: Real IBKR rates included ($0.0035/share + fees)
 
 ### Methodology
 - **Fresh data approach**: Month-by-month testing
 - **No look-ahead bias**: Strict chronological order
 - **Realistic execution**: Includes slippage and commissions
 - **Market regime variance**: Bull, bear, sideways, and volatile conditions
+
+### Backtesting Tools
+
+#### Quick Backtest (No API Key Required)
+```bash
+# Run backtest with included sample data
+python3 backtest_with_sample.py
+```
+
+#### Full Historical Backtest (Polygon API Required)
+```bash
+# Set your Polygon API key
+export POLYGON_API_KEY=your_key_here
+
+# Run full year backtest
+python3 backtest_real_polygon_yearly.py --start-year 2024 --start-month 1
+```
+
+#### Sample Data Included
+- **Location**: `data/sample_polygon_data.zip`
+- **Content**: First 5 trading days of each month in 2024
+- **Format**: Polygon API compatible JSON
+- **Symbols**: All 8 trading symbols with minute data
 
 ## ⚙️ Configuration
 

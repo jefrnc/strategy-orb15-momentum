@@ -1,0 +1,267 @@
+{
+  "system_name": "ORB_GROWTH_SYSTEM",
+  "version": "1.0",
+  "description": "Crecimiento acelerado con riesgo moderado - 20.7% retorno anualizado",
+  "last_updated": "2025-01-02",
+  "position_sizing": {
+    "base_risk_per_trade": 0.04,
+    "dynamic_sizing_formula": "account_value * base_risk * volatility_multiplier * performance_multiplier",
+    "account_tiers": {
+      "50000": {
+        "max_position": 750,
+        "risk_per_trade": 750
+      },
+      "100000": {
+        "max_position": 1500,
+        "risk_per_trade": 1500
+      },
+      "200000": {
+        "max_position": 3000,
+        "risk_per_trade": 3000
+      },
+      "500000": {
+        "max_position": 7500,
+        "risk_per_trade": 7500
+      }
+    },
+    "volatility_adjustments": {
+      "vix_below_20": 1.2,
+      "vix_20_to_30": 1.0,
+      "vix_30_to_40": 0.7,
+      "vix_above_40": 0.4
+    },
+    "absolute_limits": {
+      "max_position_percentage": 0.025,
+      "max_portfolio_exposure": 0.15,
+      "min_position_size": 200
+    }
+  },
+  "risk_management": {
+    "loss_limits": {
+      "daily": {
+        "tier_1_warning": 0.015,
+        "tier_2_reduce_sizing": 0.025,
+        "tier_3_stop_trading": 0.035,
+        "absolute_dollar_limit": 3500
+      },
+      "weekly": {
+        "max_loss_percentage": 0.06,
+        "absolute_dollar_limit": 6000
+      },
+      "monthly": {
+        "max_loss_percentage": 0.12,
+        "reset_on_new_month": true
+      }
+    },
+    "consecutive_loss_protection": {
+      "max_consecutive_losses": 4,
+      "actions": {
+        "after_3_losses": "reduce_sizing_50_percent",
+        "after_4_losses": "stop_trading_1_hour",
+        "after_5_losses": "end_trading_day"
+      }
+    },
+    "drawdown_circuit_breakers": {
+      "5_percent_drawdown": "reduce_sizing_25_percent",
+      "10_percent_drawdown": "reduce_sizing_50_percent",
+      "15_percent_drawdown": "emergency_stop"
+    }
+  },
+  "strategy_parameters": {
+    "beast_mode": {
+      "orb_minutes": 15,
+      "stop_loss_pct": -0.008,
+      "take_profit_pct": 0.045,
+      "max_daily_trades": 6,
+      "max_simultaneous_positions": 3,
+      "trading_window": {
+        "start": "09:45",
+        "end": "13:00"
+      },
+      "symbols": [
+        "NVDA",
+        "TSLA",
+        "AMD",
+        "AAPL",
+        "MSFT",
+        "GOOGL"
+      ]
+    },
+    "scalping_mode": {
+      "orb_minutes": 5,
+      "stop_loss_pct": -0.005,
+      "take_profit_pct": 0.015,
+      "max_daily_trades": 8,
+      "max_simultaneous_positions": 4,
+      "trading_window": {
+        "start": "09:35",
+        "end": "11:30"
+      },
+      "symbols": [
+        "NVDA",
+        "TSLA",
+        "AMD",
+        "AAPL",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "META"
+      ]
+    }
+  },
+  "performance_gates": {
+    "scaling_up_criteria": {
+      "consecutive_profitable_days": 5,
+      "monthly_return_above": 0.03,
+      "win_rate_above": 0.55,
+      "max_drawdown_below": 0.08
+    },
+    "scaling_down_triggers": {
+      "consecutive_loss_days": 3,
+      "monthly_return_below": -0.02,
+      "win_rate_below": 0.45,
+      "drawdown_above": 0.12
+    },
+    "evaluation_periods": {
+      "daily_assessment": true,
+      "weekly_deep_review": true,
+      "monthly_scaling_decision": true
+    }
+  },
+  "market_condition_filters": {
+    "no_trading_conditions": [
+      "vix_above_45",
+      "spy_gap_above_3_percent",
+      "market_open_first_15_minutes",
+      "market_close_last_30_minutes",
+      "fomc_announcement_day"
+    ],
+    "reduce_sizing_conditions": [
+      "vix_above_35",
+      "spy_gap_above_2_percent",
+      "earnings_announcement_day",
+      "friday_afternoon"
+    ],
+    "correlation_limits": {
+      "max_sector_exposure": 0.4,
+      "max_correlated_positions": 2
+    }
+  },
+  "execution_settings": {
+    "order_types": {
+      "entry": "market",
+      "stop_loss": "stop_market",
+      "take_profit": "limit"
+    },
+    "slippage_protection": {
+      "max_slippage_bps": 5,
+      "price_improvement_capture": true
+    },
+    "timing_rules": {
+      "order_timeout_seconds": 30,
+      "cancel_unfilled_at_close": true
+    }
+  },
+  "monitoring_and_alerts": {
+    "real_time_monitoring": {
+      "position_size_exceeded": true,
+      "daily_loss_approaching": true,
+      "consecutive_losses": true,
+      "market_volatility_spike": true
+    },
+    "daily_reporting": {
+      "pnl_summary": true,
+      "win_rate_calculation": true,
+      "risk_metrics_update": true,
+      "performance_vs_targets": true
+    },
+    "alert_thresholds": {
+      "daily_loss_warning": 0.02,
+      "position_size_warning": 0.02,
+      "drawdown_warning": 0.08
+    }
+  },
+  "progressive_scaling": {
+    "performance_milestones": {
+      "unlock_higher_sizing": {
+        "criteria": "30_consecutive_profitable_days",
+        "reward": "increase_max_position_25_percent"
+      },
+      "unlock_additional_symbols": {
+        "criteria": "quarterly_return_above_15_percent",
+        "reward": "add_3_additional_symbols"
+      },
+      "unlock_advanced_features": {
+        "criteria": "6_months_profitable",
+        "reward": "enable_options_strategies"
+      }
+    },
+    "degradation_rules": {
+      "reduce_complexity": {
+        "trigger": "monthly_loss_above_5_percent",
+        "action": "revert_to_basic_configuration"
+      }
+    }
+  },
+  "connection_settings": {
+    "ib_connection": {
+      "host": "127.0.0.1",
+      "paper_port": 7497,
+      "live_port": 7496,
+      "client_id": 10,
+      "auto_reconnect": true,
+      "max_reconnect_attempts": 5
+    },
+    "data_sources": {
+      "primary": "interactive_brokers",
+      "backup": "polygon_api",
+      "volatility_data": "cboe_vix"
+    }
+  },
+  "logging_and_persistence": {
+    "trade_logging": {
+      "log_all_orders": true,
+      "log_market_data": true,
+      "log_risk_calculations": true
+    },
+    "data_retention": {
+      "trade_history_days": 365,
+      "market_data_days": 90,
+      "log_files_days": 30
+    },
+    "backup_strategy": {
+      "daily_backup": true,
+      "cloud_storage": false,
+      "local_redundancy": true
+    }
+  },
+  "target_metrics": {
+    "annual_return_target": 0.2,
+    "max_acceptable_drawdown": 0.15,
+    "min_sharpe_ratio": 1.5,
+    "min_win_rate": 0.5,
+    "max_consecutive_losses": 5
+  },
+  "emergency_procedures": {
+    "system_failure": {
+      "auto_flatten_positions": true,
+      "notification_contacts": [
+        "email",
+        "sms"
+      ],
+      "backup_execution_system": "manual_ib_tws"
+    },
+    "market_crash": {
+      "auto_reduce_exposure": true,
+      "emergency_stop_loss": 0.02,
+      "hold_cash_percentage": 0.5
+    }
+  },
+  "expected_performance": {
+    "annualized_return_pct": 20.74109818181231,
+    "max_drawdown_pct": 0.10636513553541836,
+    "sharpe_ratio": 1.5891974232756059,
+    "win_rate_pct": 37.267080745341616,
+    "risk_level": "growth"
+  }
+}
