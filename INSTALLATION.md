@@ -53,17 +53,17 @@ ORB_IBKR_CLIENT_ID=10
 ```
 
 ### Risk Profile Selection
-The system defaults to **AGGRESSIVE MODE (25.7% annual return)**
+The system defaults to **AGGRESSIVE MODE (5% position risk - HIGH RISK)**
 
 To use different risk profiles:
 ```bash
-# Conservative (10.3% annual)
+# Conservative (2% position risk)
 python3 orb_trader.py --risk-profile conservative --mode paper
 
-# Balanced (16.0% annual)
+# Balanced (3% position risk)
 python3 orb_trader.py --risk-profile balanced --mode paper
 
-# Growth (20.7% annual)
+# Growth (4% position risk)
 python3 orb_trader.py --risk-profile growth --mode paper
 ```
 

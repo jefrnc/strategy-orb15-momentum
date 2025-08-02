@@ -95,11 +95,11 @@ class ORBOptimizedTrader:
     def show_optimized_banner(self):
         """Show optimized system banner"""
         risk_info = {
-            'conservative': {'return': '10.3%', 'risk': '2.0%', 'desc': 'Bajo Riesgo'},
-            'balanced': {'return': '16.0%', 'risk': '3.0%', 'desc': 'Balance Óptimo'},
-            'growth': {'return': '20.7%', 'risk': '4.0%', 'desc': 'Crecimiento Acelerado'},
-            'aggressive': {'return': '25.7%', 'risk': '5.0%', 'desc': 'Máximo Retorno'},
-            'optimized': {'return': '8.1%', 'risk': '1.5%', 'desc': 'Original Optimizado'}
+            'conservative': {'risk': '2.0%', 'desc': 'Low Risk'},
+            'balanced': {'risk': '3.0%', 'desc': 'Balanced Risk'},
+            'growth': {'risk': '4.0%', 'desc': 'Growth Focus'},
+            'aggressive': {'risk': '5.0%', 'desc': 'High Risk Mode'},
+            'optimized': {'risk': '1.5%', 'desc': 'Original Strategy'}
         }
         
         info = risk_info.get(self.risk_profile, risk_info['aggressive'])
@@ -107,9 +107,9 @@ class ORBOptimizedTrader:
         print("🎯" + "="*70 + "🎯")
         print("                 ORB TRADING SYSTEM")
         print("🎯" + "="*70 + "🎯")
-        print(f"🏆 PERFIL: {info['desc']}")
-        print(f"📊 Expected Return: {info['return']} anual")
-        print(f"⚡ Position Risk: {info['risk']} del capital")
+        print(f"🏆 PROFILE: {info['desc']}")
+        print(f"⚡ Position Risk: {info['risk']} per trade")
+        print("📊 Performance varies with market conditions")
         print(f"🔥 Strategy: 15min ORB, 5.6:1 R/R")
         if self.risk_profile == 'aggressive':
             print("🚀 MODO AGRESIVO: Máximas ganancias activadas")
@@ -630,10 +630,10 @@ def main():
     
     # Risk profile information
     risk_info = {
-        'conservative': {'return': '10.3%', 'risk': '2.0%'},
-        'balanced': {'return': '16.0%', 'risk': '3.0%'},
-        'growth': {'return': '20.7%', 'risk': '4.0%'},
-        'aggressive': {'return': '25.7%', 'risk': '5.0%'}
+        'conservative': {'risk': '2.0%'},
+        'balanced': {'risk': '3.0%'},
+        'growth': {'risk': '4.0%'},
+        'aggressive': {'risk': '5.0%'}
     }
     
     print("🎯 ORB TRADING SYSTEM")
@@ -641,12 +641,12 @@ def main():
     if args.risk_profile:
         info = risk_info[args.risk_profile]
         print(f"🏆 Risk Profile: {args.risk_profile.upper()}")
-        print(f"📊 Expected Return: {info['return']} annual")
         print(f"⚡ Position Risk: {info['risk']} per trade")
+        print("📊 Performance depends on market conditions")
     else:
         print("🏆 Configuration: AGGRESSIVE MODE (Default)")
-        print("📊 Expected Return: 25.7% annual")
         print("⚡ Position Risk: 5.0% per trade")
+        print("📊 Performance depends on market conditions")
     print(f"📊 Mode: {args.mode.upper()}")
     print()
     

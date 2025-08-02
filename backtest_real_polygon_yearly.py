@@ -22,11 +22,10 @@ class RealPolygonBacktester:
         self.base_url = "https://api.polygon.io"
         self.config = self._load_config(config_path)
         self.cache_dir = "data/polygon_cache"
-        self.sample_dir = "data/sample_polygon_data"
         self.results_dir = "data/yearly_backtest_results"
         
         # Create directories
-        for dir_path in [self.cache_dir, self.sample_dir, self.results_dir]:
+        for dir_path in [self.cache_dir, self.results_dir]:
             os.makedirs(dir_path, exist_ok=True)
         
         # Trading parameters from config
@@ -74,12 +73,6 @@ class RealPolygonBacktester:
                 # Cache the data
                 with open(cache_file, 'w') as f:
                     json.dump(data, f)
-                
-                # Save sample for sharing (first 5 days of each month)
-                if date.endswith(('01', '02', '03', '04', '05')):
-                    sample_file = f"{self.sample_dir}/{symbol}_{date}.json"
-                    with open(sample_file, 'w') as f:
-                        json.dump(data, f)
                 
                 time.sleep(0.2)  # Rate limiting
             else:
@@ -452,10 +445,8 @@ def main():
         args.end_month
     )
     
-    # Create sample data archive
-    print("\nCreating sample data archive...")
-    shutil.make_archive('data/sample_polygon_data', 'zip', 'data/sample_polygon_data')
-    print("Sample data saved to: data/sample_polygon_data.zip")
+    # Backtesting complete
+    print("\nBacktesting complete. Results saved to data/yearly_backtest_results/")
 
 if __name__ == "__main__":
     main()
