@@ -121,7 +121,7 @@ python3 orb_trader.py --mode paper
 
 - **Documentation**: See README.md and RISK_PROFILES.md
 - **Issues**: Open issue on GitHub
-- **Community**: Join our Discord/Telegram (if available)
+- **Community**: Join discussions on GitHub
 
 ---
 
