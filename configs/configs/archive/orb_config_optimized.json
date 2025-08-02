@@ -1,0 +1,26 @@
+{
+  "symbol": "NVDA",
+  "trading": {
+    "max_position_size": 300.0,
+    "stop_loss_pct": -0.008,
+    "take_profit_pct": 0.025,
+    "orb_minutes": 15,
+    "position_close_time": "15:30",
+    "max_daily_trades": 1,
+    "volume_multiplier": 1.5,
+    "enable_trailing_stop": true,
+    "trailing_stop_activation": 0.01,
+    "enable_partial_exits": true,
+    "partial_exit_1_pct": 0.5,
+    "partial_exit_1_target": 0.015,
+    "enable_dynamic_targets": true,
+    "enable_momentum_exits": true
+  },
+  "risk_management": {
+    "max_daily_loss": 150.0,
+    "max_weekly_loss": 400.0,
+    "max_position_pct": 0.03,
+    "circuit_breaker_vix": 40,
+    "consecutive_loss_limit": 3
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "symbol": "NVDA",
+  "trading": {
+    "max_position_size": 500.0,
+    "stop_loss_pct": -0.008,
+    "take_profit_pct": 0.025,
+    "orb_minutes": 15,
+    "position_close_time": "15:00",
+    "max_daily_trades": 1,
+    "volume_multiplier": 1.5
+  },
+  "risk_management": {
+    "max_daily_loss": 250.0,
+    "min_shares": 1,
+    "use_trailing_stop": false,
+    "partial_exits": false
+  }
+}

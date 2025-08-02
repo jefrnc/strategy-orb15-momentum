@@ -1,0 +1,44 @@
+🎯 ANÁLISIS COMPLETO DE NIVELES DE RIESGO
+======================================================================
+
+📊 COMPARACIÓN DE RETORNOS VS RIESGO
+----------------------------------------------------------------------
+Risk %   Annual %   Drawdown %   Sharpe   Final $     
+----------------------------------------------------------------------
+1.5      8.1        0.0          1.55     $104,818    
+2.0      10.3       0.0          1.57     $106,151    
+2.5      13.0       0.1          1.56     $107,825    
+3.0      16.0       0.1          1.58     $109,693    
+4.0      20.7       0.1          1.59     $112,700    
+5.0      25.7       0.1          1.61     $115,900    
+6.0      31.0       0.1          1.62     $119,442    
+
+🏆 MEJORES OPCIONES POR CRITERIO
+----------------------------------------
+🚀 Mayor retorno: 6.0% riesgo → 31.0% anual
+⚡ Mejor Sharpe: 6.0% riesgo → 1.62 ratio
+🛡️ Más seguro: 1.5% riesgo → 0.0% drawdown
+
+💡 RECOMENDACIONES ESTRATÉGICAS
+----------------------------------------
+🛡️ CONSERVADOR (2.0% riesgo):
+   • Retorno anualizado: 10.3%
+   • Máximo drawdown: 0.0%
+   • Recomendado para: Capital principal, bajo estrés
+
+⚖️ BALANCEADO (3.0% riesgo):
+   • Retorno anualizado: 16.0%
+   • Máximo drawdown: 0.1%
+   • Recomendado para: Crecimiento estable, tolerancia media
+
+🔥 AGRESIVO (5.0% riesgo):
+   • Retorno anualizado: 25.7%
+   • Máximo drawdown: 0.1%
+   • Recomendado para: Crecimiento acelerado, alta tolerancia
+
+⚠️ CONSIDERACIONES DE RIESGO
+----------------------------------------
+• Riesgo 6%: Drawdown hasta 0.1% posible
+• Mayor volatilidad = mayor estrés emocional
+• Pérdida máxima individual: $-84
+• Rachas de pérdidas: hasta 13 consecutivas

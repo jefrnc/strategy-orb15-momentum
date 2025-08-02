@@ -1,0 +1,58 @@
+{
+  "name": "Scalping Mode - 23.6% Annual Winner",
+  "description": "Winning configuration from winrate optimizer - 23.6% annual return, 59.5% win rate",
+  "strategy_type": "scalping_orb",
+  "symbol": "NVDA",
+  "trading": {
+    "max_position_size": 8000.0,
+    "stop_loss_pct": -0.006,
+    "take_profit_pct": 0.018,
+    "orb_minutes": 5,
+    "position_close_time": "15:00",
+    "max_daily_trades": 15,
+    "volume_multiplier": 0.02,
+    "no_trade_before": "09:35",
+    "no_trade_after": "11:00",
+    "trade_both_directions": true
+  },
+  "risk_management": {
+    "max_daily_loss": 1000.0,
+    "min_shares": 1,
+    "use_trailing_stop": false,
+    "partial_exits": false,
+    "risk_reward_ratio": 3.0
+  },
+  "connection": {
+    "host": "127.0.0.1",
+    "port": 7496,
+    "client_id": 7,
+    "reconnect_attempts": 3,
+    "reconnect_delay": 5
+  },
+  "execution": {
+    "use_market_orders": true,
+    "use_oco_orders": true,
+    "slippage_buffer": 0.005,
+    "order_timeout": 15
+  },
+  "notifications": {
+    "enabled": true,
+    "telegram_chat_id": null,
+    "success_alerts": true,
+    "failure_alerts": true
+  },
+  "logging": {
+    "level": "INFO",
+    "file_rotation": true,
+    "max_file_size_mb": 50,
+    "backup_count": 7
+  },
+  "optimization_results": {
+    "annual_return": 23.6,
+    "win_rate": 0.595,
+    "total_trades": 37,
+    "monthly_return": 1.97,
+    "score": 14.0,
+    "data_source": "fresh_polygon_data"
+  }
+}

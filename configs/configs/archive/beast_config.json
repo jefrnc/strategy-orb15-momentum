@@ -1,0 +1,56 @@
+{
+  "// BREAKOUT BEAST CONFIGURATION": "21.4% Annual Return Proven Setup",
+  "// DO NOT MODIFY - This config generated 21.4% annual in backtesting": "",
+  
+  "ib_host": "127.0.0.1",
+  "ib_port": 7497,
+  "ib_client_id": 69,
+  
+  "// BEAST MODE CORE PARAMETERS": "Proven 21.4% annual configuration",
+  "orb_minutes": 15,
+  "stop_loss_pct": -0.01,
+  "take_profit_pct": 0.05,
+  "position_size": 6000,
+  "max_daily_trades": 10,
+  
+  "// TRADING SCHEDULE": "Beast hunting hours",
+  "market_open": "09:30",
+  "entry_start": "09:45",
+  "entry_cutoff": "13:00", 
+  "force_close": "15:45",
+  
+  "// RISK MANAGEMENT": "Beast protection",
+  "max_daily_loss": -1000,
+  "max_positions": 6,
+  "enable_shorts": true,
+  
+  "// BEAST SYMBOLS": "High-performance stocks for beast mode",
+  "beast_symbols": [
+    "NVDA", "TSLA", "AMD", "AAPL", "MSFT", "GOOGL",
+    "AMZN", "META", "NFLX", "CRM", "ADBE", "INTC",
+    "AVGO", "QCOM", "MU", "AMAT", "LRCX", "KLAC"
+  ],
+  
+  "// MINIMAL FILTERS": "Beast doesn't need many filters", 
+  "min_price": 10.0,
+  "max_price": 1000.0,
+  "volume_multiplier": 0.02,
+  
+  "// EXECUTION SETTINGS": "Beast mode execution",
+  "enable_scaling": true,
+  "enable_trailing": false,
+  "profit_target_scale": 1.0,
+  "commission_per_share": 0.005,
+  
+  "// PERFORMANCE TARGETS": "Beast expectations",
+  "target_daily_return": 0.06,
+  "target_monthly_return": 1.78,
+  "target_annual_return": 21.4,
+  "expected_win_rate": 0.55,
+  "expected_trades_per_day": 10,
+  
+  "// BEAST QUOTES": "Motivation",
+  "beast_motto": "21.4% ANNUAL OR DEATH",
+  "risk_tolerance": "YOLO BUT CALCULATED",
+  "strategy_description": "5:1 R/R ORB breakout beast that eats profits"
+}

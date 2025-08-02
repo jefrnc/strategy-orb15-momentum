@@ -1,0 +1,46 @@
+{
+  "symbol": "NVDA",
+  "trading": {
+    "max_position_size": 8000.0,
+    "stop_loss_pct": -0.006,
+    "take_profit_pct": 0.018,
+    "orb_minutes": 5,
+    "position_close_time": "15:00",
+    "max_daily_trades": 15,
+    "volume_multiplier": 0.4,
+    "no_trade_before": "09:35",
+    "no_trade_after": "11:00",
+    "trade_both_directions": true
+  },
+  "risk_management": {
+    "max_daily_loss": 250.0,
+    "min_shares": 1,
+    "use_trailing_stop": false,
+    "partial_exits": false
+  },
+  "connection": {
+    "host": "127.0.0.1",
+    "port": 7496,
+    "client_id": 6,
+    "reconnect_attempts": 3,
+    "reconnect_delay": 5
+  },
+  "execution": {
+    "use_market_orders": true,
+    "use_oco_orders": true,
+    "slippage_buffer": 0.01,
+    "order_timeout": 30
+  },
+  "notifications": {
+    "enabled": false,
+    "webhook_url": null,
+    "email": null,
+    "telegram_chat_id": null
+  },
+  "logging": {
+    "level": "INFO",
+    "file_rotation": true,
+    "max_file_size_mb": 50,
+    "backup_count": 7
+  }
+}

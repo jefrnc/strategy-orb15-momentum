@@ -1,0 +1,30 @@
+{
+  "symbol": "TSLA",
+  "trading": {
+    "max_position_size": 1500.0,
+    "stop_loss_pct": -0.012,
+    "take_profit_ratio": 3.0,
+    "volume_multiplier": 0.4,
+    "orb_minutes": 15,
+    "position_close_time": "15:00",
+    "max_daily_trades": 1,
+    "enable_trailing_stop": false
+  },
+  "risk_management": {
+    "max_daily_loss": 240.0,
+    "min_shares": 1
+  },
+  "connection": {
+    "host": "127.0.0.1",
+    "port": 7496,
+    "client_id": 6
+  },
+  "execution": {
+    "use_market_orders": true,
+    "use_oco_orders": true,
+    "slippage_buffer": 0.01
+  },
+  "logging": {
+    "level": "INFO"
+  }
+}

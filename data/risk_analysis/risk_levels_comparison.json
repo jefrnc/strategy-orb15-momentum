@@ -1,0 +1,79 @@
+{
+  "1.5": {
+    "risk_pct": 1.5,
+    "annualized_return": 8.10530132285863,
+    "max_drawdown": 0.042553004916401446,
+    "sharpe_ratio": 1.5545811018612499,
+    "total_return_pct": 4.81815075201125,
+    "win_rate": 37.267080745341616,
+    "final_account_value": 104818.15075201125,
+    "largest_loss": -21.241905522407755,
+    "consecutive_losses": 13
+  },
+  "2.0": {
+    "risk_pct": 2.0,
+    "annualized_return": 10.29509733323727,
+    "max_drawdown": 0.04814116726850913,
+    "sharpe_ratio": 1.5747828636505783,
+    "total_return_pct": 6.151426293412484,
+    "win_rate": 37.267080745341616,
+    "final_account_value": 106151.42629341249,
+    "largest_loss": -27.80613262293871,
+    "consecutive_losses": 13
+  },
+  "2.5": {
+    "risk_pct": 2.5,
+    "annualized_return": 13.01383514699468,
+    "max_drawdown": 0.07137044197635804,
+    "sharpe_ratio": 1.5619989565877903,
+    "total_return_pct": 7.825089148515555,
+    "win_rate": 37.267080745341616,
+    "final_account_value": 107825.08914851556,
+    "largest_loss": -34.433474980199776,
+    "consecutive_losses": 13
+  },
+  "3.0": {
+    "risk_pct": 3.0,
+    "annualized_return": 16.006606307214142,
+    "max_drawdown": 0.07806186004294587,
+    "sharpe_ratio": 1.58208695222774,
+    "total_return_pct": 9.692651504022502,
+    "win_rate": 37.267080745341616,
+    "final_account_value": 109692.6515040225,
+    "largest_loss": -42.133811044815516,
+    "consecutive_losses": 13
+  },
+  "4.0": {
+    "risk_pct": 4.0,
+    "annualized_return": 20.74109818181231,
+    "max_drawdown": 0.10636513553541836,
+    "sharpe_ratio": 1.5891974232756059,
+    "total_return_pct": 12.699589900526803,
+    "win_rate": 37.267080745341616,
+    "final_account_value": 112699.5899005268,
+    "largest_loss": -55.262265245877416,
+    "consecutive_losses": 13
+  },
+  "5.0": {
+    "risk_pct": 5.0,
+    "annualized_return": 25.667989168923263,
+    "max_drawdown": 0.1181326337046351,
+    "sharpe_ratio": 1.6144731287845628,
+    "total_return_pct": 15.900427797434984,
+    "win_rate": 37.267080745341616,
+    "final_account_value": 115900.42779743498,
+    "largest_loss": -69.55443704297569,
+    "consecutive_losses": 13
+  },
+  "6.0": {
+    "risk_pct": 6.0,
+    "annualized_return": 30.993625111195556,
+    "max_drawdown": 0.14693948634741616,
+    "sharpe_ratio": 1.6240753857008339,
+    "total_return_pct": 19.441653008044998,
+    "win_rate": 37.267080745341616,
+    "final_account_value": 119441.653008045,
+    "largest_loss": -83.91762208963102,
+    "consecutive_losses": 13
+  }
+}

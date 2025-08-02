@@ -1,0 +1,212 @@
+{
+  "risk_scaling_matrix": {
+    "description": "Matriz de escalado de riesgo dinámico basado en condiciones de mercado y performance",
+    "version": "1.0.0",
+    
+    "market_regime_detection": {
+      "normal": {
+        "vix_range": [0, 25],
+        "spy_volatility_range": [0, 0.015],
+        "description": "Condiciones normales de mercado"
+      },
+      "stressed": {
+        "vix_range": [25, 35],
+        "spy_volatility_range": [0.015, 0.025],
+        "description": "Mercado estresado, volatilidad elevada"
+      },
+      "crisis": {
+        "vix_range": [35, 100],
+        "spy_volatility_range": [0.025, 1.0],
+        "description": "Crisis de mercado, volatilidad extrema"
+      }
+    },
+    
+    "position_scaling_matrix": {
+      "NORMAL_NOVICE": {
+        "base_multiplier": 0.25,
+        "max_position_usd": 2000,
+        "max_daily_trades": 2,
+        "description": "Trader nuevo en mercado normal"
+      },
+      "NORMAL_DEVELOPING": {
+        "base_multiplier": 0.375,
+        "max_position_usd": 3000,
+        "max_daily_trades": 4,
+        "description": "Trader en desarrollo en mercado normal"
+      },
+      "NORMAL_PROFICIENT": {
+        "base_multiplier": 0.6,
+        "max_position_usd": 6000,
+        "max_daily_trades": 10,
+        "description": "Trader competente en mercado normal - Beast Mode"
+      },
+      "NORMAL_EXPERT": {
+        "base_multiplier": 0.72,
+        "max_position_usd": 8000,
+        "max_daily_trades": 15,
+        "description": "Trader experto en mercado normal - Maximum Performance"
+      },
+      "STRESSED_NOVICE": {
+        "base_multiplier": 0.15,
+        "max_position_usd": 1500,
+        "max_daily_trades": 1,
+        "description": "Trader nuevo en mercado estresado"
+      },
+      "STRESSED_DEVELOPING": {
+        "base_multiplier": 0.225,
+        "max_position_usd": 2250,
+        "max_daily_trades": 3,
+        "description": "Trader en desarrollo en mercado estresado"
+      },
+      "STRESSED_PROFICIENT": {
+        "base_multiplier": 0.45,
+        "max_position_usd": 4500,
+        "max_daily_trades": 7,
+        "description": "Trader competente en mercado estresado"
+      },
+      "STRESSED_EXPERT": {
+        "base_multiplier": 0.54,
+        "max_position_usd": 6000,
+        "max_daily_trades": 10,
+        "description": "Trader experto en mercado estresado"
+      },
+      "CRISIS_NOVICE": {
+        "base_multiplier": 0.075,
+        "max_position_usd": 750,
+        "max_daily_trades": 1,
+        "description": "Trader nuevo en crisis de mercado"
+      },
+      "CRISIS_DEVELOPING": {
+        "base_multiplier": 0.1125,
+        "max_position_usd": 1125,
+        "max_daily_trades": 2,
+        "description": "Trader en desarrollo en crisis de mercado"
+      },
+      "CRISIS_PROFICIENT": {
+        "base_multiplier": 0.18,
+        "max_position_usd": 1800,
+        "max_daily_trades": 3,
+        "description": "Trader competente en crisis de mercado"
+      },
+      "CRISIS_EXPERT": {
+        "base_multiplier": 0.27,
+        "max_position_usd": 3000,
+        "max_daily_trades": 5,
+        "description": "Trader experto en crisis de mercado"
+      }
+    },
+    
+    "volatility_adjustments": {
+      "calculation_formula": "adjusted_size = base_size * (25 / current_vix)",
+      "minimum_adjustment": 0.25,
+      "maximum_adjustment": 2.0,
+      "vix_bands": {
+        "ultra_low": {
+          "vix_range": [0, 12],
+          "multiplier": 1.5,
+          "warning": "Complacencia extrema - cuidado con reversión"
+        },
+        "low": {
+          "vix_range": [12, 18],
+          "multiplier": 1.2,
+          "warning": "Volatilidad baja - oportunidades limitadas"
+        },
+        "normal": {
+          "vix_range": [18, 25],
+          "multiplier": 1.0,
+          "warning": "Condiciones normales"
+        },
+        "elevated": {
+          "vix_range": [25, 35],
+          "multiplier": 0.75,
+          "warning": "Volatilidad elevada - reducir exposición"
+        },
+        "high": {
+          "vix_range": [35, 50],
+          "multiplier": 0.5,
+          "warning": "Alta volatilidad - trading defensivo"
+        },
+        "extreme": {
+          "vix_range": [50, 100],
+          "multiplier": 0.25,
+          "warning": "Volatilidad extrema - supervivencia mode"
+        }
+      }
+    },
+    
+    "drawdown_adjustments": {
+      "normal_operation": {
+        "drawdown_range": [0, -0.01],
+        "position_multiplier": 1.0,
+        "status": "NORMAL"
+      },
+      "caution_zone": {
+        "drawdown_range": [-0.01, -0.02],
+        "position_multiplier": 0.8,
+        "status": "CAUTION"
+      },
+      "warning_zone": {
+        "drawdown_range": [-0.02, -0.035],
+        "position_multiplier": 0.6,
+        "status": "WARNING"
+      },
+      "danger_zone": {
+        "drawdown_range": [-0.035, -0.05],
+        "position_multiplier": 0.4,
+        "status": "DANGER"
+      },
+      "emergency_zone": {
+        "drawdown_range": [-0.05, -0.08],
+        "position_multiplier": 0.2,
+        "status": "EMERGENCY"
+      },
+      "lockdown_zone": {
+        "drawdown_range": [-0.08, -1.0],
+        "position_multiplier": 0.0,
+        "status": "LOCKDOWN"
+      }
+    },
+    
+    "performance_momentum": {
+      "calculation_window_days": 30,
+      "momentum_bands": {
+        "excellent": {
+          "sharpe_threshold": 3.0,
+          "win_rate_threshold": 0.65,
+          "multiplier": 1.25,
+          "description": "Performance excepcional - incrementar agresividad"
+        },
+        "good": {
+          "sharpe_threshold": 2.0,
+          "win_rate_threshold": 0.58,
+          "multiplier": 1.1,
+          "description": "Buen performance - ligero incremento"
+        },
+        "average": {
+          "sharpe_threshold": 1.5,
+          "win_rate_threshold": 0.52,
+          "multiplier": 1.0,
+          "description": "Performance promedio - mantener sizing"
+        },
+        "below_average": {
+          "sharpe_threshold": 1.0,
+          "win_rate_threshold": 0.48,
+          "multiplier": 0.85,
+          "description": "Performance por debajo del promedio - reducir"
+        },
+        "poor": {
+          "sharpe_threshold": 0.5,
+          "win_rate_threshold": 0.42,
+          "multiplier": 0.7,
+          "description": "Performance pobre - reducir significativamente"
+        },
+        "terrible": {
+          "sharpe_threshold": 0.0,
+          "win_rate_threshold": 0.35,
+          "multiplier": 0.5,
+          "description": "Performance terrible - sizing mínimo"
+        }
+      }
+    }
+  }
+}
