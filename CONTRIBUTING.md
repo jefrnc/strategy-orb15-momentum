@@ -51,7 +51,7 @@ Thank you for your interest in contributing to the ORB Trading System! This docu
 
 ### 1. Fork and Clone
 ```bash
-git clone https://github.com/yourusername/ORB-15-Momentum.git
+git clone https://github.com/jefrnc/ORB-15-Momentum.git
 cd ORB-15-Momentum
 ```
 

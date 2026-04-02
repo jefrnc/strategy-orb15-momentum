@@ -11,7 +11,7 @@
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/ORB-15-Momentum.git
+git clone https://github.com/jefrnc/ORB-15-Momentum.git
 cd ORB-15-Momentum
 ```
 

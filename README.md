@@ -41,7 +41,7 @@ pip install -r requirements.txt
 ### 1. Setup
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/ORB-15-Momentum.git
+git clone https://github.com/jefrnc/ORB-15-Momentum.git
 cd ORB-15-Momentum
 
 # Create virtual environment
@@ -117,7 +117,7 @@ python3 backtest_real_polygon_yearly.py --start-year 2024 --start-month 1 --end-
 ## ⚙️ Configuration Files
 
 ### Strategy Parameters
-Configure your strategy in `configs/orb_config.json`:
+Configure your strategy using one of the config files in the `configs/` directory (e.g., `configs/orb_balanced_config.json`):
 - ORB period length
 - Stop loss and take profit levels
 - Position sizing rules
