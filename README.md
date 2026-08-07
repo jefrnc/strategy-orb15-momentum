@@ -41,8 +41,8 @@ pip install -r requirements.txt
 ### 1. Setup
 ```bash
 # Clone repository
-git clone https://github.com/jefrnc/ORB-15-Momentum.git
-cd ORB-15-Momentum
+git clone https://github.com/jefrnc/strategy-orb15-momentum.git
+cd strategy-orb15-momentum
 
 # Create virtual environment
 python3 -m venv orb_env
