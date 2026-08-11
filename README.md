@@ -183,3 +183,12 @@ MIT License - See LICENSE file for details
 ---
 
 *Remember: Successful trading requires discipline, proper risk management, and continuous learning. This is a tool, not a magic money maker.*
+
+---
+
+## Support this project
+
+Free, and maintained on my own time. Sponsorship covers the market data and broker API access
+behind these tools, and keeps them working when brokers change their export formats.
+
+[![Sponsor](https://img.shields.io/badge/Sponsor-jefrnc-EA4AAA?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/jefrnc)
